@@ -1,0 +1,276 @@
+#include<stdio.h>
+#include<math.h>
+
+int main(){
+	int deg, a, b, c, d, e, f, itr, i, j, gX, hX;
+	float x0, fX, fx, x;
+	printf("Enter the degree of Equation : ");
+	scanf("%d",&deg);
+	if(deg == 1){
+		printf("Enter Coeff. of 'x' : ");
+		scanf("%d",&e);
+		printf("Enter the Constant value : ");
+		scanf("%d",&f);
+		printf("\n\nOur equation is = %dx  + %d",e,f);
+		printf("\nDerivative of the equation = %d",e);
+		
+		for (i=-10;i<=10;i++){
+			j = i+1;
+			gX = e*i + f;
+			hX = e*j + f;
+			
+			if(gX<0 && hX>0){
+				if(hX*hX>gX*gX){
+					x0 = i;
+					break;
+				}
+				else if(hX*hX<gX*gX){
+					x0 = j;
+					break;
+				}
+			}
+			else if(gX>0 && hX<0){
+				if(hX*hX>gX*gX){
+					x0 = i;
+					break;
+				}
+				else if(hX*hX<gX*gX){
+					x0 = j;
+					break;
+				}
+			}
+		}
+		printf("\n\nx0 = %f",x0);
+		printf("\n\n\nEnter the no. of iterations : ");
+		scanf("%d",&itr);
+		printf("\n");
+		for(i=1;i<=itr;i++){
+			printf("For Iteration %d :  ",i);
+			fX = e*x0 + f;
+			fx = e;
+			x = x0 - fX/fx;
+			printf("x = %f \n",x);
+			x0 = x;
+		}
+		printf("\n\nHence, The required root of the given equation is %f",x);
+	}
+	else if(deg == 2){
+		printf("Enter Coeff. of 'x^2' : ");
+		scanf("%d",&d);
+		printf("Enter Coeff. of 'x' : ");
+		scanf("%d",&e);
+		printf("Enter the Constant value : ");
+		scanf("%d",&f);
+		printf("\n\nOur equation is = %dx^2 + %dx  + %d",d,e,f);
+		printf("\nDerivative of the equation = %dx + %d",d*2,e);
+		
+		for (i=-10;i<=10;i++){
+			j = i+1;
+			gX = d*i*i + e*i + f;
+			hX = d*j*j + e*j + f;
+			
+			if(gX<0 && hX>0){
+				if(hX*hX>gX*gX){
+					x0 = i;
+					break;
+				}
+				else if(hX*hX<gX*gX){
+					x0 = j;
+					break;
+				}
+			}
+			else if(gX>0 && hX<0){
+				if(hX*hX>gX*gX){
+					x0 = i;
+					break;
+				}
+				else if(hX*hX<gX*gX){
+					x0 = j;
+					break;
+				}
+			}
+		}
+		printf("\n\nx0 = %f",x0);
+		printf("\n\n\nEnter the no. of iterations : ");
+		scanf("%d",&itr);
+		printf("\n");
+		for(i=1;i<=itr;i++){
+			printf("For Iteration %d :  ",i);
+			fX = d*x0*x0 + e*x0 + f;
+			fx = 2*d*x0 + e;
+			x = x0 - fX/fx;
+			printf("x = %f \n",x);
+			x0 = x;
+		}
+		printf("\n\nHence, The required root of the given equation is %f",x);
+	}
+	else if(deg == 3){
+		printf("Enter Coeff. of 'x^3' : ");
+		scanf("%d",&c);
+		printf("Enter Coeff. of 'x^2' : ");
+		scanf("%d",&d);
+		printf("Enter Coeff. of 'x' : ");
+		scanf("%d",&e);
+		printf("Enter the Constant value : ");
+		scanf("%d",&f);
+		printf("\n\nOur equation is = %dx^3 + %dx^2 + %dx  + %d",c,d,e,f);
+		printf("\nDerivative of the equation = %dx^2 + %dx + %d",c*3,d*2,e);
+		
+		for (i=-10;i<=10;i++){
+			j = i+1;
+			gX = c*i*i*i + d*i*i + e*i + f;
+			hX = c*j*j*j + d*j*j + e*j + f;
+			
+			if(gX<0 && hX>0){
+				if(hX*hX>gX*gX){
+					x0 = i;
+					break;
+				}
+				else if(hX*hX<gX*gX){
+					x0 = j;
+					break;
+				}
+			}
+			else if(gX>0 && hX<0){
+				if(hX*hX>gX*gX){
+					x0 = i;
+					break;
+				}
+				else if(hX*hX<gX*gX){
+					x0 = j;
+					break;
+				}
+			}
+		}
+		printf("\n\nx0 = %f",x0);
+		printf("\n\n\nEnter the no. of iterations : ");
+		scanf("%d",&itr);
+		printf("\n");
+		for(i=1;i<=itr;i++){
+			printf("For Iteration %d :  ",i);
+			fX = c*x0*x0*x0 + d*x0*x0 + e*x0 + f;
+			fx = 3*c*x0*x0 + 2*d*x0 + e;
+			x = x0 - fX/fx;
+			printf("x = %f \n",x);
+			x0 = x;
+		}
+		printf("\n\nHence, The required root of the given equation is %f",x);	
+	}
+	else if(deg == 4){
+		printf("Enter Coeff. of 'x^4' : ");
+		scanf("%d",&b);
+		printf("Enter Coeff. of 'x^3' : ");
+		scanf("%d",&c);
+		printf("Enter Coeff. of 'x^2' : ");
+		scanf("%d",&d);
+		printf("Enter Coeff. of 'x' : ");
+		scanf("%d",&e);
+		printf("Enter the Constant value : ");
+		scanf("%d",&f);
+		printf("\n\nOur equation is = %dx^4 + %dx^3 + %dx^2 + %dx  + %d",b,c,d,e,f);
+		printf("\nDerivative of the equation = %dx^3 + %dx^2 + %dx + %d",b*4,c*3,d*2,e);
+		
+		for (i=-10;i<=10;i++){
+			j = i+1;
+			gX = b*i*i*i*i + c*i*i*i + d*i*i + e*i + f;
+			hX = b*j*j*j*j + c*j*j*j + d*j*j + e*j + f;
+			
+			if(gX<0 && hX>0){
+				if(hX*hX>gX*gX){
+					x0 = i;
+					break;
+				}
+				else if(hX*hX<gX*gX){
+					x0 = j;
+					break;
+				}
+			}
+			else if(gX>0 && hX<0){
+				if(hX*hX>gX*gX){
+					x0 = i;
+					break;
+				}
+				else if(hX*hX<gX*gX){
+					x0 = j;
+					break;
+				}
+			}
+		}
+		printf("\n\nx0 = %f",x0);
+		printf("\n\n\nEnter the no. of iterations : ");
+		scanf("%d",&itr);
+		printf("\n");
+		for(i=1;i<=itr;i++){
+			printf("For Iteration %d :  ",i);
+			fX = b*x0*x0*x0*x0 + c*x0*x0*x0 + d*x0*x0 + e*x0 + f;
+			fx = 4*b*x0*x0*x0 + 3*c*x0*x0 + 2*d*x0 + e;
+			x = x0 - fX/fx;
+			printf("x = %f \n",x);
+			x0 = x;
+		}
+		printf("\n\nHence, The required root of the given equation is %f",x);
+		
+	}
+	else if(deg == 5){
+		printf("Enter Coeff. of 'x^5' : ");
+		scanf("%d",&a);
+		printf("Enter Coeff. of 'x^4' : ");
+		scanf("%d",&b);
+		printf("Enter Coeff. of 'x^3' : ");
+		scanf("%d",&c);
+		printf("Enter Coeff. of 'x^2' : ");
+		scanf("%d",&d);
+		printf("Enter Coeff. of 'x' : ");
+		scanf("%d",&e);
+		printf("Enter the Constant value : ");
+		scanf("%d",&f);
+		printf("\n\nOur equation is = %dx^5 + %dx^4 + %dx^3 + %dx^2 + %dx  + %d",a,b,c,d,e,f);
+		printf("\nDerivative of the equation = %dx^4 + %dx^3 + %dx^2 + %dx + %d",a*5,b*4,c*3,d*2,e);
+		
+		for (i=-10;i<=10;i++){
+			j = i+1;
+			gX = a*i*i*i*i*i + b*i*i*i*i + c*i*i*i + d*i*i + e*i + f;
+			hX = a*j*j*j*j*j + b*j*j*j*j + c*j*j*j + d*j*j + e*j + f;
+			
+			if(gX<0 && hX>0){
+				if(hX*hX>gX*gX){
+					x0 = i;
+					break;
+				}
+				else if(hX*hX<gX*gX){
+					x0 = j;
+					break;
+				}
+			}
+			else if(gX>0 && hX<0){
+				if(hX*hX>gX*gX){
+					x0 = i;
+					break;
+				}
+				else if(hX*hX<gX*gX){
+					x0 = j;
+					break;
+				}
+			}
+		}
+		printf("\n\nx0 = %f",x0);
+		printf("\n\n\nEnter the no. of iterations : ");
+		scanf("%d",&itr);
+		printf("\n");
+		for(i=1;i<=itr;i++){
+			printf("For Iteration %d :  ",i);
+			fX = a*x0*x0*x0*x0*x0 + b*x0*x0*x0*x0 + c*x0*x0*x0 + d*x0*x0 + e*x0 + f;
+			fx = 5*a*x0*x0*x0*x0 + 4*b*x0*x0*x0 + 3*c*x0*x0 + 2*d*x0 + e;
+			x = x0 - fX/fx;
+			printf("x = %f \n",x);
+			x0 = x;
+		}
+		printf("\n\nHence, The required root of the given equation is %f",x);
+		
+	}
+	else{
+		printf("\n\nThis program supports Equations only having degree between 1 to 5");
+	}
+	
+	
+}
